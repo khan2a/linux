@@ -1,0 +1,9 @@
+apt-get install openssh-server
+update-rc.d -f ssh remove
+update-rc.d -f ssh defaults
+apt-get install chkconfig
+cd /etc/ssh/
+mkdir default_kali_keys
+mv ssh_host_* default_kali_keys/
+dpkg-reconfigure openssh-server
+service ssh restart
